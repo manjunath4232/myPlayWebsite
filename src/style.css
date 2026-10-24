@@ -1595,3 +1595,36 @@ form label small {
     display: none;
   }
 }
+
+.logo-mark {
+  letter-spacing: 0;
+  padding-right: 0;
+}
+.brand-name {
+  display: block;
+}
+.brand-name strong {
+  display: block;
+  font-weight: 500;
+  font-size: 21px;
+  letter-spacing: 2.5px;
+  line-height: 1.2;
+}
+.brand-name small {
+  display: block;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+@media (max-width: 650px) {
+  .brand-name strong {
+    font-size: 17px;
+    letter-spacing: 1.8px;
+  }
+  .brand-name small {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+}

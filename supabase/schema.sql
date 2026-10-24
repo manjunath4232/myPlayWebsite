@@ -47,7 +47,7 @@ grant select on public.store_settings to anon,authenticated;
 grant update on public.store_settings to authenticated;
 create policy "Everyone reads store settings" on public.store_settings for select to anon,authenticated using(true);
 create policy "Only owner updates settings" on public.store_settings for update to authenticated using((select public.is_owner())) with check((select public.is_owner()));
-insert into public.store_settings(id,business_name,tagline,description) values(1,'MyPlay','Good things, simply found.','A little inspiration for your everyday. Explore our collection, find something you love, and talk to us on WhatsApp.');
+insert into public.store_settings(id,business_name,tagline,description) values(1,'AAMUKTHA Drapes & Delights','Good things, simply found.','A little inspiration for your everyday. Explore our collection, find something you love, and talk to us on WhatsApp.');
 
 -- Private bucket. Customers can request signed URLs for published product photos only.
 insert into storage.buckets(id,name,public,file_size_limit,allowed_mime_types)

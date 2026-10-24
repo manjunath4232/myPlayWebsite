@@ -38,9 +38,19 @@ import { money, filterProducts, whatsappLink } from "./domain";
 import "./style.css";
 const IconLogo = () => (
   <span className="logo-mark">
-    m<span>•</span>
+    A<span>•</span>
   </span>
 );
+function BrandName({ name }) {
+  return name === "AAMUKTHA Drapes & Delights" ? (
+    <span className="brand-name">
+      <strong>AAMUKTHA</strong>
+      <small>Drapes &amp; Delights</small>
+    </span>
+  ) : (
+    <span className="brand-name">{name}</span>
+  );
+}
 function Modal({ title, onClose, children, wide = false }) {
   const ref = useRef();
   useEffect(() => {
@@ -253,8 +263,10 @@ function App() {
           }}
         >
           <IconLogo />
-          {settings.business_name}
-          <span className="brand-suffix">COLLECTION</span>
+          <BrandName name={settings.business_name} />
+          {settings.business_name.length < 20 && (
+            <span className="brand-suffix">COLLECTION</span>
+          )}
         </a>
         <nav aria-label="Main navigation">
           {admin ? (
@@ -617,7 +629,7 @@ function App() {
             }}
           >
             <IconLogo />
-            {settings.business_name}
+            <BrandName name={settings.business_name} />
           </a>
           <span>A collection to explore. A conversation to connect.</span>
           <button

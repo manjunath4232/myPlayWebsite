@@ -1,6 +1,6 @@
 export const defaultSettings = {
   id: 1,
-  business_name: "MyPlay",
+  business_name: "AAMUKTHA Drapes & Delights",
   tagline: "Good things, simply found.",
   description:
     "A little inspiration for your everyday. Explore our collection, find something you love, and talk to us on WhatsApp.",

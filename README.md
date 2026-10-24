@@ -1,4 +1,4 @@
-# MyPlay Catalog
+# AAMUKTHA Drapes & Delights
 
 A responsive product showcase with a private owner dashboard. Visitors browse products and continue the conversation on WhatsApp. No cart, checkout, payments or customer accounts.
 
@@ -41,8 +41,9 @@ The configured database starts with **no products**; sample products never popul
 
 ## Current deployment
 
-- Website: https://myplay-catalog-4232.pages.dev/
-- Owner dashboard: https://myplay-catalog-4232.pages.dev/admin
+- Website: https://aamuktha-drapes-and-delights.pages.dev/
+- Owner dashboard: https://aamuktha-drapes-and-delights.pages.dev/admin
+- Previous address: https://myplay-catalog-4232.pages.dev/ redirects to the current website. The small redirect deployment is tracked under `deployment/legacy-redirect/`.
 - GitHub branch: `v1`
 - Supabase project: `myplay-catalog` (MyPlay organization)
 - Deployment method: Cloudflare Pages Direct Upload. GitHub pushes save source code but do not automatically redeploy this project. Rebuild with the public Supabase configuration, zip the contents of `dist/` (not the parent folder), and upload a new production deployment in Cloudflare.
