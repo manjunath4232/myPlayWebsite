@@ -34,12 +34,21 @@ Without Supabase configuration, the site shows a **read-only sample collection**
 6. Copy the Project URL and public publishable/anon key into `.env.local` or the hosting provider's build environment:
    - `VITE_SUPABASE_URL`
    - `VITE_SUPABASE_ANON_KEY`
-   Never use a service-role or secret key in frontend variables.
+     Never use a service-role or secret key in frontend variables.
 7. Run the app, visit `/admin`, sign in and add actual products. Set your business name and WhatsApp number under Store settings.
 
 The configured database starts with **no products**; sample products never populate the real catalog automatically. Prices use Indian rupees. WhatsApp buttons stay disabled until a valid number with country code is provided.
 
-## Cloudflare Pages deployment (Free plan)
+## Current deployment
+
+- Website: https://myplay-catalog-4232.pages.dev/
+- Owner dashboard: https://myplay-catalog-4232.pages.dev/admin
+- GitHub branch: `v1`
+- Supabase project: `myplay-catalog` (MyPlay organization)
+- Deployment method: Cloudflare Pages Direct Upload. GitHub pushes save source code but do not automatically redeploy this project. Rebuild with the public Supabase configuration, zip the contents of `dist/` (not the parent folder), and upload a new production deployment in Cloudflare.
+- Initial release needs owner account creation/authorization, real products and a WhatsApp number.
+
+## Alternative: Git-connected Cloudflare Pages deployment (Free plan)
 
 1. Connect the GitHub repository, selecting the intended branch (`v1` initially).
 2. Build command: `npm run build`; output directory: `dist`; root: repository root.
