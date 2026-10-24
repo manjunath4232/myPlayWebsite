@@ -108,7 +108,7 @@ p {
   flex-shrink: 0;
 }
 header {
-  height: 108px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -125,28 +125,16 @@ header {
   letter-spacing: -1.2px;
   gap: 10px;
 }
-.logo-mark {
-  width: 35px;
-  height: 35px;
-  background: var(--green);
-  color: #fff7e7;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Georgia, serif;
-  font-size: 28px;
-  line-height: 1;
-  letter-spacing: -5px;
-  padding-right: 6px;
-  position: relative;
+.brand-logo {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
-.logo-mark span {
-  font-size: 12px;
-  position: absolute;
-  right: 6px;
-  top: 3px;
-  color: #c0cf96;
+.footer-inner .brand-logo {
+  width: 64px;
+  height: 64px;
 }
 .brand-suffix {
   font-size: 8px;
@@ -1209,16 +1197,15 @@ form label small {
     display: none;
   }
   header {
-    height: 78px;
+    height: 96px;
     padding: 0 18px;
   }
   .brand {
     font-size: 24px;
   }
-  .logo-mark {
-    width: 30px;
-    height: 30px;
-    font-size: 24px;
+  .brand-logo {
+    width: 62px;
+    height: 62px;
   }
   nav {
     gap: 15px;
@@ -1596,10 +1583,6 @@ form label small {
   }
 }
 
-.logo-mark {
-  letter-spacing: 0;
-  padding-right: 0;
-}
 .brand-name {
   display: block;
 }
@@ -1626,5 +1609,27 @@ form label small {
   .brand-name small {
     font-size: 11px;
     letter-spacing: 0.5px;
+  }
+}
+
+@media (max-width: 380px) {
+  header .brand {
+    gap: 6px;
+  }
+  header .brand-logo {
+    width: 52px;
+    height: 52px;
+  }
+  header .brand-name strong {
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  header .brand-name small {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+  header nav .text-button {
+    font-size: 10px;
+    gap: 3px;
   }
 }

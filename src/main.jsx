@@ -42,9 +42,13 @@ import {
 } from "./domain";
 import "./style.css";
 const IconLogo = () => (
-  <span className="logo-mark">
-    A<span>•</span>
-  </span>
+  <img
+    className="brand-logo"
+    src="/images/aamuktha-logo.png"
+    alt=""
+    width="90"
+    height="90"
+  />
 );
 function BrandName({ name }) {
   return name === "AAMUKTHA Drapes & Delights" ? (
