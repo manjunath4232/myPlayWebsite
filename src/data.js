@@ -1,3 +1,13 @@
+export const productCategories = [
+  "Kids Toys & gifts",
+  "Stationery collection",
+  "Jute/cloth/pvc/birthday Bags",
+  "Festive collection",
+  "Jewellery Organisers",
+  "Sarees & Blouses",
+  "Lunch bags",
+];
+
 export const defaultSettings = {
   id: 1,
   business_name: "AAMUKTHA Drapes & Delights",

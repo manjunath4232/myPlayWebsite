@@ -33,7 +33,7 @@ import {
   deleteProduct,
   saveSettings,
 } from "./api";
-import { defaultSettings, sampleProducts } from "./data";
+import { defaultSettings, sampleProducts, productCategories } from "./data";
 import {
   money,
   filterProducts,
@@ -245,7 +245,10 @@ function App() {
   }
   const categories = [
     "All",
-    ...new Set(products.filter((p) => p.published).map((p) => p.category)),
+    ...new Set([
+      ...productCategories,
+      ...products.filter((p) => p.published).map((p) => p.category),
+    ]),
   ];
   const visible = filterProducts(
     products.filter((p) => p.published),
@@ -415,6 +418,7 @@ function App() {
                   <button
                     key={c}
                     className={filters.category === c ? "active" : ""}
+                    aria-pressed={filters.category === c}
                     onClick={() => setFilters({ ...filters, category: c })}
                   >
                     {c}
@@ -974,7 +978,12 @@ function Admin({
       {editing && (
         <ProductForm
           product={editing}
-          categories={[...new Set(products.map((p) => p.category))]}
+          categories={[
+            ...new Set([
+              ...productCategories,
+              ...products.map((p) => p.category),
+            ]),
+          ]}
           onClose={() => setEditing(null)}
           onSave={async () => {
             setEditing(null);
@@ -1136,20 +1145,21 @@ function ProductForm({ product, categories, onClose, onSave }) {
           </label>
           <label>
             Category
-            <input
+            <select
               name="category"
-              list="categories"
               value={form.category}
               onChange={change}
               required
-              maxLength={50}
-              placeholder="e.g. Home & living"
-            />
-            <datalist id="categories">
+            >
+              <option value="" disabled>
+                Choose a category
+              </option>
               {categories.map((c) => (
-                <option key={c} value={c} />
+                <option key={c} value={c}>
+                  {c}
+                </option>
               ))}
-            </datalist>
+            </select>
           </label>
         </div>
         <label>
