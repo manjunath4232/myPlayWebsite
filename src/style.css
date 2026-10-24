@@ -1005,6 +1005,7 @@ form > label,
   margin: 18px 0;
 }
 form label input:not([type="checkbox"]),
+form label select,
 textarea {
   border: 1px solid #cdd4c2;
   background: #fffefb;
@@ -1631,5 +1632,468 @@ form label small {
   header nav .text-button {
     font-size: 10px;
     gap: 3px;
+  }
+}
+
+/* Phone layouts keep browsing and owner tasks within easy reach. */
+@media (max-width: 650px) {
+  html {
+    scroll-padding-top: 102px;
+  }
+  .wrap {
+    width: calc(100% - 32px);
+  }
+  .announcement {
+    font-size: 10px;
+    line-height: 1.5;
+    padding: 8px 16px;
+    text-align: center;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    height: auto;
+    min-height: 80px;
+    gap: 10px;
+    padding: 10px 16px;
+    background: #fcfbf7f5;
+    box-shadow: 0 3px 12px #173f3508;
+  }
+  header .brand {
+    min-width: 0;
+    gap: 8px;
+  }
+  header .brand-logo {
+    width: 56px;
+    height: 56px;
+  }
+  header .brand-name {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  header nav {
+    flex-shrink: 0;
+  }
+  .button,
+  .icon-button,
+  .text-button,
+  .nav-contact {
+    min-height: 44px;
+  }
+  .button {
+    font-size: 14px;
+  }
+  .icon-button {
+    min-width: 44px;
+  }
+  .nav-contact {
+    padding: 10px 12px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  header nav .text-button {
+    font-size: 12px;
+    gap: 4px;
+  }
+  header nav .text-button svg {
+    display: none;
+  }
+  .hero {
+    padding: 28px 0 30px;
+    gap: 0;
+  }
+  .hero-copy {
+    padding: 0;
+  }
+  .hero .eyebrow {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 11vw, 54px);
+    margin: 18px 0;
+    letter-spacing: -1.7px;
+  }
+  .hero p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .hero .button {
+    width: 100%;
+    min-height: 48px;
+  }
+  .hero-art,
+  .hero-footnote {
+    display: none;
+  }
+  .service-strip {
+    padding: 14px 12px;
+    font-size: 10px;
+    gap: 8px;
+  }
+  .service-strip svg {
+    width: 18px;
+    height: 18px;
+  }
+  .collection {
+    padding: 30px 0 36px;
+  }
+  .collection .section-head {
+    margin-bottom: 22px;
+  }
+  .section-head h2 {
+    font-size: 34px;
+    letter-spacing: -1.3px;
+  }
+  .collection .section-head > p {
+    font-size: 13px;
+    line-height: 1.6;
+    padding-top: 10px;
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  .catalog-toolbar {
+    gap: 12px;
+    align-items: stretch;
+    min-width: 0;
+  }
+  .catalog-toolbar .search {
+    order: -1;
+  }
+  .search {
+    min-width: 0;
+    min-height: 48px;
+    padding: 8px 12px;
+  }
+  .search input {
+    font-size: 16px;
+  }
+  .tabs {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    gap: 8px;
+    padding: 4px 2px 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #a9b79e transparent;
+  }
+  .tabs button {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-height: 44px;
+    font-size: 13px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    background: #f4f3ec;
+    color: #485c4e;
+  }
+  .tabs .active {
+    border-color: var(--green);
+    background: var(--green);
+    color: #fff;
+  }
+  .tabs button span {
+    font-size: 11px;
+  }
+  .results-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+    padding: 12px 0;
+  }
+  .results-bar > div {
+    justify-content: space-between;
+    gap: 12px;
+    flex: 1 1 100%;
+  }
+  .available-filter {
+    min-height: 44px;
+    font-size: 13px;
+    gap: 8px;
+  }
+  .available-filter input,
+  .checkbox-label input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+  .sort select {
+    min-height: 44px;
+    font-size: 14px;
+    max-width: 165px;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 12px;
+  }
+  .product-card {
+    min-width: 0;
+  }
+  .product-photo {
+    aspect-ratio: 1;
+    border-radius: 10px;
+  }
+  .product-photo > img {
+    object-fit: contain;
+  }
+  .product-info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .product-info > div {
+    min-width: 0;
+    width: 100%;
+  }
+  .category-label {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .product-info h3 {
+    font-size: 15px;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+  .product-info h3 button {
+    min-height: 44px;
+    width: 100%;
+  }
+  .price {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .stock-tag,
+  .stock-tag.sold {
+    font-size: 10px;
+    line-height: 1.3;
+    max-width: calc(100% - 12px);
+    white-space: normal;
+    top: 6px;
+    left: 6px;
+  }
+  .photo-open {
+    width: 32px;
+    height: 32px;
+  }
+  .product-detail-link {
+    font-size: 12px;
+    min-height: 44px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding-block: 10px;
+  }
+  .empty-state {
+    padding: 36px 20px;
+  }
+  .empty-state h3 {
+    font-size: 26px;
+  }
+  .empty-state p,
+  .steps p,
+  .contact-section p {
+    font-size: 14px;
+  }
+  .steps h3 {
+    font-size: 16px;
+  }
+  .contact-section .button {
+    width: 100%;
+    min-height: 48px;
+  }
+  .footer-inner {
+    gap: 12px;
+  }
+  .footer-inner .brand {
+    width: 100%;
+  }
+  .footer-inner > span {
+    font-size: 11px;
+  }
+  .owner-link {
+    font-size: 13px;
+  }
+  .modal,
+  .modal.wide {
+    width: 100%;
+    max-width: 100%;
+    max-height: 92dvh;
+    margin: 0;
+    inset: auto 0 0;
+    border-radius: 20px 20px 0 0;
+    padding: 20px 20px max(20px, env(safe-area-inset-bottom));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .modal-top {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .modal-top h2 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .modal p {
+    font-size: 14px;
+  }
+  .detail-photo {
+    aspect-ratio: 1;
+  }
+  .detail-photo img {
+    object-fit: contain;
+  }
+  .detail-copy .availability,
+  .detail-copy small {
+    font-size: 12px;
+  }
+  .detail-copy .button {
+    min-height: 48px;
+  }
+  .login-page {
+    padding: 28px 16px;
+    min-height: 65dvh;
+  }
+  .login-card {
+    padding: 24px;
+    gap: 14px;
+  }
+  .login-card h1 {
+    font-size: 42px;
+  }
+  .login-card p {
+    font-size: 14px;
+  }
+  .login-card small {
+    font-size: 12px;
+  }
+  .admin-page {
+    padding-top: 26px;
+  }
+  .admin-title {
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .admin-title h1 {
+    font-size: 32px;
+  }
+  .admin-title p {
+    font-size: 14px;
+  }
+  .admin-title .text-button {
+    font-size: 13px;
+  }
+  .admin-stats {
+    margin: 24px 0;
+  }
+  .admin-stats > div {
+    padding: 14px 10px;
+  }
+  .admin-stats span {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .admin-toolbar {
+    margin-top: 24px;
+  }
+  .admin-toolbar > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .admin-toolbar .button {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+  .admin-product-name strong {
+    font-size: 15px;
+  }
+  .admin-product-name span {
+    font-size: 12px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .pill {
+    font-size: 11px;
+  }
+  .row-actions .icon-button {
+    min-width: 44px;
+  }
+  form > label,
+  .form-columns > label {
+    font-size: 14px;
+  }
+  form label input:not([type="checkbox"]),
+  form label select,
+  textarea {
+    font-size: 16px;
+    min-height: 48px;
+  }
+  .form-columns {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .checkbox-label {
+    min-height: 44px;
+  }
+  .upload-box input {
+    font-size: 14px !important;
+  }
+  .upload-box span {
+    font-size: 15px;
+  }
+  .upload-box small,
+  form label small {
+    font-size: 12px;
+  }
+  .form-actions {
+    position: sticky;
+    bottom: -20px;
+    background: #fcfbf7;
+    padding: 16px 0;
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+  }
+  .form-actions .button {
+    flex: 1;
+    min-height: 48px;
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 359px) {
+  .product-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  header .brand-name strong {
+    font-size: 14px;
+  }
+  header .brand-name small {
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+  header .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+  header .nav-contact {
+    font-size: 11px;
+    padding-inline: 9px;
+  }
+  header nav .text-button {
+    font-size: 11px;
+  }
+  .admin-toolbar > div {
+    grid-template-columns: 1fr;
   }
 }
