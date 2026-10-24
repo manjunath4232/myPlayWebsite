@@ -34,7 +34,12 @@ import {
   saveSettings,
 } from "./api";
 import { defaultSettings, sampleProducts } from "./data";
-import { money, filterProducts, whatsappLink } from "./domain";
+import {
+  money,
+  filterProducts,
+  whatsappLink,
+  loginErrorMessage,
+} from "./domain";
 import "./style.css";
 const IconLogo = () => (
   <span className="logo-mark">
@@ -715,10 +720,8 @@ function Admin({
       });
       if (error) throw error;
       setPassword("");
-    } catch {
-      setAuthError(
-        "Unable to sign in. Check your email and password and try again.",
-      );
+    } catch (error) {
+      setAuthError(loginErrorMessage(error));
     } finally {
       setBusy(false);
     }

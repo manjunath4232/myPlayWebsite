@@ -66,3 +66,26 @@ export function validateProduct(p) {
     price: Math.round(Number(p.price) * 100) / 100,
   };
 }
+
+export function loginErrorMessage(error) {
+  if (error?.code === "email_not_confirmed") {
+    return "Your email is not confirmed yet. Open the Supabase confirmation email, confirm your address, then sign in again.";
+  }
+  if (error?.status === 429 || error?.code === "over_request_rate_limit") {
+    return "Too many sign-in attempts. Please wait a few minutes and try again.";
+  }
+  if (error?.status >= 500) {
+    return "The sign-in service is temporarily unavailable. Please try again shortly.";
+  }
+  if (
+    error?.name === "AuthRetryableFetchError" ||
+    error?.name === "TypeError" ||
+    error?.status === 0
+  ) {
+    return "We couldn’t reach the sign-in service. Check your internet connection and try again.";
+  }
+  if (error?.code === "email_provider_disabled") {
+    return "Email sign-in is unavailable. Ask the site administrator to check the authentication settings.";
+  }
+  return "Unable to sign in. Check your website-owner email and password and try again.";
+}

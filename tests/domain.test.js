@@ -5,6 +5,7 @@ import {
   whatsappLink,
   filterProducts,
   validateProduct,
+  loginErrorMessage,
 } from "../src/domain.js";
 const products = [
   {
@@ -86,4 +87,25 @@ test("invalid product data cannot pass client validation", () => {
     validateProduct({ name: "Vase", category: "Home", price: 0 }).price,
     0,
   );
+});
+
+test("sign-in guidance separates email verification from wrong credentials and service failures", () => {
+  assert.match(
+    loginErrorMessage({ code: "email_not_confirmed", status: 400 }),
+    /email is not confirmed/,
+  );
+  assert.doesNotMatch(
+    loginErrorMessage({ code: "email_not_confirmed", status: 400 }),
+    /password/,
+  );
+  assert.match(
+    loginErrorMessage({ code: "invalid_credentials", status: 400 }),
+    /website-owner email and password/,
+  );
+  assert.match(loginErrorMessage({ status: 429 }), /Too many sign-in attempts/);
+  assert.match(
+    loginErrorMessage({ name: "AuthRetryableFetchError", status: 0 }),
+    /internet connection/,
+  );
+  assert.match(loginErrorMessage({ status: 503 }), /temporarily unavailable/);
 });
